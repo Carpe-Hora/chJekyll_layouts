@@ -68,43 +68,42 @@
           </div><!-- .entry-body -->
         </article><!-- #post-## -->
     </section>
-<section id="sidebar" class="grid_6">
-<div id="sidebar_content">
-<ul class="xoxo">
+  <section id="sidebar" class="grid_6">
+    <div id="sidebar_content">
+      <ul class="xoxo">
+        <li>
+          <form role="search" method="get" id="searchform" action="http://www.carpe-hora.com/">
+            <div><label class="screen-reader-text" for="s">Recherche pour:</label>
+            <input placeholder="Search for..." name="s" id="s" type="search">
+            <input id="searchsubmit" value="Recherche" type="submit">
+            </div>
+           </form>
+        </li>
+
+        <li>
+            <h3>Publications</h3>
+          <ul>
+            {% if site.posts %}
+              {% for post in site.posts limit:5 %}
+                <li><a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="http:carpe-hora.github.com" title="Voir toutes nos publications">Retour a la liste</a></li>
+            {% endif %}
+          </ul>
+        </li>
+        <li>
+          <h3>Meta</h3>
+          <ul>
+            <li><a href="http://www.carpe-hora.com/wp-login.php">Connexion</a></li>
+          </ul>
+        </li>
+
+      </ul>
 
 
-<li>
-<form role="search" method="get" id="searchform" action="http://www.carpe-hora.com/">
- 	<div><label class="screen-reader-text" for="s">Recherche pour:</label>
- 	<input placeholder="Search for..." name="s" id="s" type="search">
- 	<input id="searchsubmit" value="Recherche" type="submit">
- 	</div>
- 	</form>          </li>
-
-<li>
-<h3>Publications</h3>
-<ul>
-{% if sites.posts %}
-  {% for post in site.posts limit:5 %}
-    <li><a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% endfor %}
-{% else %}
-    <li><a href="http:carpe-hora.github.com" title="Voir toutes nos publications">Retour a la liste</a></li>
-{% endif %}
-</ul>
-</li>
-<li>
-<h3>Meta</h3>
-<ul>
-<li><a href="http://www.carpe-hora.com/wp-login.php">Connexion</a></li>
-</ul>
-</li>
-
-</ul>
-
-
-</div>
-</section>
+    </div>
+  </section>
 </div><!-- .container_24 -->
  	</section><!-- #content -->
 <footer role="contentinfo" class="content">
