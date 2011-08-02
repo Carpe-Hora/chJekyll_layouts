@@ -83,7 +83,13 @@
         <li>
             <h3>Publications</h3>
           <ul>
+            {% if site.posts %}
+              {% for post in site.posts limit:5 %}
+                <li><a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a></li>
+              {% endfor %}
+            {% else %}
               <li><a href="http://carpe-hora.github.com" title="Voir toutes nos publications">Retour a la liste</a></li>
+            {% endif %}
           </ul>
         </li>
         <li>
